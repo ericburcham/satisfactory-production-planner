@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProductionPlanner\ProductionPlanner.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="items.json" />
+    <None Remove="machines.json" />
+    <None Remove="recipes.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="data-files\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="data-files\en-US.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="data-files\data1.0.json" />
+    <AdditionalFiles Include="data-files\data1.0.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AdditionalFiles>
+  </ItemGroup>
+
+</Project>
